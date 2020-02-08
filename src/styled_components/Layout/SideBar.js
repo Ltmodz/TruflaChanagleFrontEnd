@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Widget from "./Widget";
+import Widget from "../Widget";
 export default styled(Widget)
 `
     grid-column: 1;

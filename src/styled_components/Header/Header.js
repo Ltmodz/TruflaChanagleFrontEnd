@@ -9,5 +9,5 @@ export default styled.header `
     grid-row:1;
     box-shadow: 0px 0px 9px 5px rgba(219,219,219,1);
     display: flex;
-    
+    justify-items:center
 `;
