@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import DepartmentItem from './DepartmentItem';
-
+import DepartmentsList from '../../../styled_components/Departments/DepartmentsList'
+import DepartmentListItem from '../../../styled_components/Departments/DepartmentListItem'
+import DepartmentsUnorderdList from '../../../styled_components/Departments/DepartmentsUnorderdList'
 export default function DepartmentList() {
     const [departments,setDepartments] = useState(["fashoin","food","games","electronics"]);
 
@@ -8,9 +9,14 @@ export default function DepartmentList() {
         console.log(`DepartmentsList recived ${name}`);
     }
     return (
-        departments.map((name,index)=>(
-            <DepartmentItem onDepartmentSelected={handleSelection} key={index} name={name}></DepartmentItem>
-        ))
+        <DepartmentsList>
+            <h2> Products Categories </h2>
+            <DepartmentsUnorderdList>
+                <DepartmentListItem>Food</DepartmentListItem>
+                <DepartmentListItem>Product</DepartmentListItem>
+                <DepartmentListItem>Product</DepartmentListItem>
+            </DepartmentsUnorderdList>
+        </DepartmentsList>    
         
     )
     
