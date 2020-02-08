@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	transition: 0.3s;
 }
 
 body,
@@ -22,4 +23,5 @@ code {
 #root {
 	height: 100%;
 	width: 100%;
+	padding: 0 5%;
 }

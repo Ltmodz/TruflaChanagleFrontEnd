@@ -6,4 +6,5 @@ export default styled.div `
     grid-template-rows: 60px calc(100% - 100px);
     width:100%;
     height: 100%;
+    grid-gap: 20px;
 `;
