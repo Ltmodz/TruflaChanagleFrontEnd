@@ -1,8 +1,11 @@
 import React from 'react'
-import SideBarItem from '../../../styled_components/Layout/SideBarItem'
+import DepartmentListItem from "../../../styled_components/Departments/DepartmentListItem"
 
-export default function DepartmentItem({name,onDepartmentSelected}) {
+export default function DepartmentItem({department,departmentSelected}) {
     return (
-    <SideBarItem onClick={()=> onDepartmentSelected(name)}>{name}</SideBarItem>
+
+        <DepartmentListItem onClick={()=>departmentSelected(department.id)}>
+            {department.name}
+        </DepartmentListItem>
     )
 }

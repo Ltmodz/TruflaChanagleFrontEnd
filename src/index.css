@@ -14,13 +14,17 @@ html {
 	padding: 0;
 	width: 100%;
 	height: 100%;
+	background-image: url("./assets/Images/BG.png") ;
+	background-repeat: no-repeat;
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
+
 #root {
 	height: 100%;
 	width: 100%;
 }
+

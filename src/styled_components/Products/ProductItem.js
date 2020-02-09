@@ -3,15 +3,6 @@ import Widget from "../Widget";
 
 
 
-const shake = keyframes`
-@keyframes {
-  0%   {background: red;}
-  25%  {background: yellow;}
-  50%  {background: black;}
-  75%  {background: maroon;}
-  100% {background: #fff;}
-}`
-
 export default  styled(Widget) `
     display: flex;
     flex-direction:column;

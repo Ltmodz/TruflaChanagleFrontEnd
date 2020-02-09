@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import MainLayout from './styled_components/Layout/MainLayout'; 
-
+import axios from 'axios';
 import './App.css';
 import Header from './styled_components/Header/Header';
 import Logo from './styled_components/Header/Logo';
@@ -10,15 +10,25 @@ import MainContent from './styled_components/Layout/MainContent';
 const Store = React.lazy(() => import('./components/Store/Store'));
 
 function App() {
+
+  const  [products,setProducts] = useState([]);
+  const handleSearch = (query)=>
+  {
+      
+      axios.get(`http://localhost:3001/products?q=${query}`).then(response=>{
+          console.log(response.data);
+          setProducts(response.data);
+      })
+  }
   return (
     <MainLayout>
         <Header>
           <Logo></Logo>
-          <Search></Search>
+          <Search ProductsSearched={handleSearch}></Search>
         </Header>
         <MainContent>
           <Suspense fallback={<div>loading.....</div>}>
-            <Store></Store>
+            <Store _products={products}></Store>
           </Suspense>
         </MainContent>
     </MainLayout>        

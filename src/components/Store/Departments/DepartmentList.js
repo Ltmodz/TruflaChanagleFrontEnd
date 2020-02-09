@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 import DepartmentsList from '../../../styled_components/Departments/DepartmentsList'
-import DepartmentListItem from '../../../styled_components/Departments/DepartmentListItem'
 import DepartmentsUnorderdList from '../../../styled_components/Departments/DepartmentsUnorderdList'
-export default function DepartmentList() {
-    const [departments,setDepartments] = useState(["fashoin","food","games","electronics"]);
+import DepartmentItem from './DepartmentItem';
+import PromoSearch from './PromoSearch/PromoSearch';
+export default function DepartmentList({departments,PromoCodeEntered,departmentSelected}) {
 
-   const handleSelection = name =>{
-        console.log(`DepartmentsList recived ${name}`);
-    }
+
+
     return (
         <DepartmentsList>
             <h2> Products Categories </h2>
             <DepartmentsUnorderdList>
-                <DepartmentListItem>Food</DepartmentListItem>
-                <DepartmentListItem>Product</DepartmentListItem>
-                <DepartmentListItem>Product</DepartmentListItem>
+                {departments.map((department)=> 
+                   <DepartmentItem departmentSelected={departmentSelected} key={department.id} department ={department}></DepartmentItem>
+                )}
             </DepartmentsUnorderdList>
+            <PromoSearch PromoCodeEntered={PromoCodeEntered}></PromoSearch>
         </DepartmentsList>    
         
     )
