@@ -30,7 +30,7 @@ export default function Store({_products}) {
 
     const handlePromo = (code)=>
     {
-        axios.get(`http://localhost:3001/products?q[promotions_code_eq]='${code}'`).then(response=>{
+        axios.get(`http://localhost:3001/products?q[promotions_code_eq]=${code}`).then(response=>{
             console.log(response.data);
             setProducts(response.data);
         })
