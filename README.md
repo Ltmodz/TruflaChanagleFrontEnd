@@ -76,6 +76,6 @@ you will find a sweet products holding an image and a price and a discouted pric
 will it just paginates
 
 ### Note
-: -used react hooks
-  -styled components
-  -every component is made by me non is imported from npm
+* used hooks
+* used styled components
+* all components are made by me
