@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Quick brife of how to install and use the application
+## Installtion
 
-## Available Scripts
+In the project directory run the following commands:
 
-In the project directory, you can run:
-
-### `npm start`
-
+```bash
+npm install
+```
+followed by a:
+```bash
+npm start
+```
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+### Usage
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `The Header`
+you will find the application named wolf after my spirit animal :D 
+on the header you could find a product name text filter just write what ever you want
+and press enter and make sure you press enter
 
-### `npm run build`
+### `The Body`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+you will see it divided into two parts departments list and the products list we will get to 
+them now
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Deparment List:**
+it holds all the the departments in the back end and upon clicking on any it will filter the
+products based on the selected department it also has the **The PromoCode** input just add the promo code and click get promo it will get the product right away here are some:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Promo codes:
 
-### `npm run eject`
+First Header  | 
+------------- |
+"S9766565F"   |
+"S9304565C"   |
+"S5783554J"   |
+"S7564211C"   |
+"T0122795A"   |
+"S8838204H"   |
+"S6565410E"   |
+"S9441073H"   |
+"S5758432G"   |
+"S6884627G"   |
+"S8610781C"   |
+"S9664329B"   |
+"S9844704J"   |
+"S6347146A"   |
+"T0142726H"   |
+"S8143598G"   |
+"S6327978A"   |
+"S9814289D"   |
+"S5587012H"   |
+"S6368304C"   |
+"S6630274A"   |
+"S7672574H"   |
+"S6238675D"   |
+"S7746372J"   |
+"S8085250I"   |
+"S7839255Z"   |
+"S6018910B"   |
+"S7453607G"   |
+"S9555091F"   |
+"S5799075I"   |
+"S8059836Z"   |
+"S6914216H"   |
+"S6013208I"   |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Products List:**
+you will find a sweet products holding an image and a price and a discouted price if there are any promotions and also there is that sweet gift box up left give it a shot and click it 
+;) you will love it
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `The Paginator`
+will it just paginates
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Note
+-used react hooks
+-styled components
+-every component is made by me non is imported from npm
