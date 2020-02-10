@@ -24,12 +24,21 @@ export default function Store({_productName}) {
     },[]);
 
     useEffect(()=>{
+        setPage(page);
+        axios.get(`http://localhost:3001/products?q[promotions_code_eq]=${promoCode}&q[name_cont]=${_productName}&q[department_id_eq]=${departmentId}&page=1`).then(response=>{
+            console.log(response.data);
+            setProducts(response.data.products);
+            setTotalCount(response.data.total_count);
+        })
+    },[promoCode,departmentId,_productName]);
+
+    useEffect(()=>{
         axios.get(`http://localhost:3001/products?q[promotions_code_eq]=${promoCode}&q[name_cont]=${_productName}&q[department_id_eq]=${departmentId}&page=${page}`).then(response=>{
             console.log(response.data);
             setProducts(response.data.products);
             setTotalCount(response.data.total_count);
         })
-    },[promoCode,departmentId,_productName,page]);
+    },[page]);
 
     return (
         <StoreContainer>
