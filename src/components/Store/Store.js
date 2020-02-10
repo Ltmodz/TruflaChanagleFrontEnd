@@ -9,46 +9,38 @@ const DepartmentList = React.lazy(()=>import("./Departments/DepartmentList"))
 const ProductList = React.lazy(()=>import("./Products/ProductList"))
 const Paginator = React.lazy(()=>import("../Paginator/Paginator"))
 
-export default function Store({_products}) {
-    const [departments,setDepartments] = useState(_products);
-    const [products,setProducts] = useState(_products);
+export default function Store({_productName}) {
+    const [departments,setDepartments] = useState([]);
+    const [products,setProducts] = useState([]);
+    const [promoCode,setPromoCode] = useState("");
+    const [page,setPage] = useState(1);
+    const [departmentId,setDepartmentId] = useState("");
+    const [totalCount,setTotalCount] = useState(0);
     useEffect(()=>{
         axios.get("http://localhost:3001/departments").then(response=>{
             console.log(response.data.departments);
             setDepartments(response.data.departments);
         })
-
-        axios.get("http://localhost:3001/products").then(response=>{
-            console.log(response.data);
-            setProducts(response.data);
-        })
     },[]);
 
     useEffect(()=>{
-            setProducts(_products);
-    },[_products]);
+        axios.get(`http://localhost:3001/products?q[promotions_code_eq]=${promoCode}&q[name_cont]=${_productName}&q[department_id_eq]=${departmentId}&page=${page}`).then(response=>{
+            console.log(response.data);
+            setProducts(response.data.products);
+            setTotalCount(response.data.total_count);
+        })
+    },[promoCode,departmentId,_productName,page]);
 
-    const handlePromo = (code)=>
-    {
-        axios.get(`http://localhost:3001/products?q[promotions_code_eq]=${code}`).then(response=>{
-            console.log(response.data);
-            setProducts(response.data);
-        })
-    }
-    const loadDepartmentProducts = (departmentId)=>
-    {
-        axios.get(`http://localhost:3001/products?department_id=${departmentId}`).then(response=>{
-            console.log(response.data);
-            setProducts(response.data);
-        })
-    }
     return (
         <StoreContainer>
             <StoreHeader> Wolfy  store</StoreHeader>
             <Suspense fallback={<div>loading...</div>}>
-              <DepartmentList departmentSelected={loadDepartmentProducts} PromoCodeEntered={handlePromo} departments={departments}></DepartmentList>
+              <DepartmentList  
+              departmentSelected={id => setDepartmentId(id)} 
+              PromoCodeEntered={code => setPromoCode(code)} 
+              departments={departments}></DepartmentList>
               <ProductList products={products}></ProductList>
-              <Paginator></Paginator>
+              <Paginator selectedPage={page=>setPage(page)} totalCount={totalCount}></Paginator>
             </Suspense>
             
         </StoreContainer>

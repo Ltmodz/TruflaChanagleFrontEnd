@@ -8,9 +8,9 @@ export default styled.div `
     justify-content:center;
     margin:10px;
     border-radius:50%;
-    color:#fff;
+    color:${props=> props.selected ? "#fff" :"#000"};
     text-shadow:0 3px 6px rgba(0, 0, 0, 0.4);
-    background-color: #6ed9f5;
+    background-color:${props=> props.selected ? "#6ed9f5" :"#f1f1f1"} ;
     font-size:18px;
     font-weight:bold;
     cursor: pointer;

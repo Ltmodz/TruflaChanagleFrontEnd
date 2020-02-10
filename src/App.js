@@ -11,24 +11,17 @@ const Store = React.lazy(() => import('./components/Store/Store'));
 
 function App() {
 
-  const  [products,setProducts] = useState([]);
-  const handleSearch = (query)=>
-  {
-      
-      axios.get(`http://localhost:3001/products?q=${query}`).then(response=>{
-          console.log(response.data);
-          setProducts(response.data);
-      })
-  }
+  const  [productName,setProductName] = useState('');
+
   return (
     <MainLayout>
         <Header>
           <Logo></Logo>
-          <Search ProductsSearched={handleSearch}></Search>
+          <Search ProductsSearched={query => setProductName(query)}></Search>
         </Header>
         <MainContent>
           <Suspense fallback={<div>loading.....</div>}>
-            <Store _products={products}></Store>
+            <Store _productName={productName}></Store>
           </Suspense>
         </MainContent>
     </MainLayout>        
