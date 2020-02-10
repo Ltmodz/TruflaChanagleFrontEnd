@@ -12,6 +12,7 @@ ${props=> props.expand ? "top:0px;right:0px;margin:auto;":"top:-10px;right:0;"}
 img{
     
     width:${props=> props.expand ? "0%": "100%"};
+    height:${props=> props.expand ? "0%": "100%"};
 
 }
 transition: 1s ease-in-out;

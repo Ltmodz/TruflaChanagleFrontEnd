@@ -9,8 +9,6 @@ export default function Paginator({totalCount,selectedPage}) {
     },[pageNumber])
     
     return (
-
-
        <PaginatorContainer>
            {
             new Array(Math.ceil(totalCount/30)).fill(null)
